@@ -15,7 +15,12 @@ class CreateShiftsTable extends Migration
     {
         Schema::create('shifts', function (Blueprint $table) {
             $table->id();
+            $table->string('shift_name')->nullable();
+            $table->string('checkin_time')->nullable();
+            $table->string('checkout_time')->nullable();
+            $table->string('working_hours')->nullable();
             $table->timestamps();
+
         });
     }
 
