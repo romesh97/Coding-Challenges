@@ -14,7 +14,7 @@ class AttendanceService
     {
         Excel::import(new AttendanceImport, $request->file);
 
-        return ('Uer table file imported successfully');
+        return ('User table file imported successfully');
 
     }
 }
