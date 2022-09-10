@@ -18,15 +18,15 @@ export default function Router() {
     {
       path: "/",
       children: [
-        { element: <Navigate to="/admission" replace />, index: true },
+        { element: <Navigate to="/home" replace />, index: true },
         {
-          path: "admission",
+          path: "home",
           children: [
             {
-              element: <Navigate to="/admission/sign-in" replace />,
+              element: <Navigate to="/home/file-upload" replace />,
               index: true,
             },
-            { path: "sign-in", element: <Home /> },
+            { path: "file-upload", element: <Home /> },
           ],
         },
       ],

@@ -1,5 +1,5 @@
 // material
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Grid, TextField } from "@mui/material";
 import Header from "../../layouts/Header";
 
 // ----------------------------------------------------------------------
@@ -9,14 +9,30 @@ export default function InitialPage() {
     <>
       <Box>
         <Header />
-        <Box sx={{ px: "20px", pb: 4, pt: 2.5 }}>
-          <Typography variant="h3" gutterBottom>
-            내 차 시세를 알아볼까요?
-          </Typography>
-          <Typography variant="body1" sx={{ color: "#858794" }}>
-            님의 차량번호를 알려주세요
-          </Typography>
-        </Box>
+        <Grid container sx={{ px: { md: "20em", sm: "3em", xs: "2em" } }}>
+          <Grid item sm={6} xs={12}>
+            <Typography
+              variant="h6"
+              sx={{
+                pt: "40px",
+              }}
+            >
+              Upload Document:
+            </Typography>
+          </Grid>
+          <Grid item sm={6} xs={12}>
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="receiptFile"
+              type="file"
+              // onChange={changeHandler}
+              // inputProps={{ accept: "image/*" }}
+              sx={{ pt: 1.5 }}
+            />
+          </Grid>
+        </Grid>
       </Box>
     </>
   );
