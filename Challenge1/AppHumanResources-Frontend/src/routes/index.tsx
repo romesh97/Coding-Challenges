@@ -17,6 +17,7 @@ export default function Router() {
   return useRoutes([
     {
       path: "/",
+
       children: [
         { element: <Navigate to="/home" replace />, index: true },
         {
