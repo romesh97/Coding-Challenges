@@ -38,7 +38,7 @@ export default function InitialPage() {
     axios
       .post("http://127.0.0.1:8000/api/upload-csv", data, options)
       .then((res) => {
-        console.log("an error occurred in response", res);
+        console.log("CSV file uploaded successfully", res);
         setUploadPercentage(100);
 
         setTimeout(() => {
