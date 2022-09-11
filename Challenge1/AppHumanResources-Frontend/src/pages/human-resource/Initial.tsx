@@ -31,7 +31,7 @@ export default function InitialPage() {
 
   const handleSubmit = () => {
     let data = new FormData();
-    data.append("files", document);
+    data.append("file", document);
     console.log("data", data);
     console.log("document", document);
 
