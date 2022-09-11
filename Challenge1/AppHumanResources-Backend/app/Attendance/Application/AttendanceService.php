@@ -9,7 +9,7 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class AttendanceService
 {
-    //UPLOAD CSV FILE FUNCTION
+    //Upload File CSV
     public static function uploadFile(Request $request)
     {
         Excel::import(new AttendanceImport, $request->file);
@@ -17,4 +17,12 @@ class AttendanceService
         return ('User table file imported successfully');
 
     }
+
+    public static function getAttendanceDetails(Request $request)
+    {
+        $attendance = Attendance::with(['schedule.employee'])->get();
+
+        return ($attendance);
+    }
+
 }

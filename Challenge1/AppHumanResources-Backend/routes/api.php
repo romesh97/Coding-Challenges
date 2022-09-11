@@ -18,4 +18,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// post request to submit form
 Route::post('/upload-csv', 'App\Http\Controllers\AttendanceController@csvFileImport');
+
+// get request to retrieve data
+Route::get('/attendance-details', 'App\Http\Controllers\AttendanceController@getAttendanceInfo');

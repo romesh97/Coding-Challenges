@@ -13,4 +13,10 @@ class AttendanceController extends Controller
         $data = AttendanceService::uploadFile($request);
         return $data;
     }
+
+    public function getAttendanceInfo(Request $request)
+    {
+        $data = AttendanceService::getAttendanceDetails($request);
+        return $data;
+    }
 }
