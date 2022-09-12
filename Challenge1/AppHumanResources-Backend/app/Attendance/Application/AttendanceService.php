@@ -20,7 +20,7 @@ class AttendanceService
 
     public static function getAttendanceDetails(Request $request)
     {
-        $attendance = Attendance::with(['schedule.employee'])->get();
+        $attendance = Attendance::with(['schedule.employee', 'schedule.shift'])->get();
 
         return ($attendance);
     }
