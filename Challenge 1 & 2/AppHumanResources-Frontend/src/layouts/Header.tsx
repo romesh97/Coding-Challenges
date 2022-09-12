@@ -10,7 +10,7 @@ export default function Header() {
           noWrap
           sx={{ fontSize: { md: "22px", sm: "17px", xs: "14px" } }}
         >
-          APP HUMAN RESOURCE
+          CODING CHALLENGES
         </Typography>
       </Toolbar>
     </AppBar>
