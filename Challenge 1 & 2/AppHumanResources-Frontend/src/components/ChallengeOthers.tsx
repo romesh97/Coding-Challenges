@@ -4,22 +4,8 @@ import { Stack, Button, Box, Typography } from "@mui/material";
 
 // ----------------------------------------------------------------------
 
-export default function ChallengeTwo() {
+export default function ChallengeOthers() {
   const navigate = useNavigate();
-
-  const findDuplicates = (arr: any) => {
-    let sorted_arr = arr.slice().sort();
-
-    let results = [];
-    for (let i = 0; i < sorted_arr.length - 1; i++) {
-      if (sorted_arr[i + 1] == sorted_arr[i]) {
-        results.push(sorted_arr[i]);
-      }
-    }
-    return results;
-  };
-
-  let duplicatedArray = [2, 3, 1, 2, 3];
 
   return (
     <>
@@ -46,14 +32,12 @@ export default function ChallengeTwo() {
           color="primary"
           onClick={() => navigate("/home/others")}
         >
-          OTHER
+          OTHERS
         </Button>
       </Stack>
       <Box>
         <Typography variant="h4">
-          The elements occurring from the Array &nbsp;{duplicatedArray} &nbsp;
-          more than once are &nbsp;
-          {findDuplicates(duplicatedArray)}
+          Challenge 3 and 4 Code Base Is On The Server
         </Typography>
       </Box>
     </>

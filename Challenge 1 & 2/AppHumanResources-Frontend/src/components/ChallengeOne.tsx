@@ -81,6 +81,14 @@ export default function ChallengeOne() {
         >
           CHALLENGE 2
         </Button>
+        <Button
+          variant="contained"
+          sx={{ width: "50%" }}
+          color="primary"
+          onClick={() => navigate("/home/others")}
+        >
+          OTHER
+        </Button>
       </Stack>
       <Grid container>
         <Grid item md={6} sm={6} xs={12}>

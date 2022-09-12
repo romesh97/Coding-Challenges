@@ -29,6 +29,7 @@ export default function Router() {
             },
             { path: "file-upload", element: <Home /> },
             { path: "challenge-two", element: <ChallengeTwo /> },
+            { path: "others", element: <Others /> },
           ],
         },
       ],
@@ -43,4 +44,8 @@ const Home = Loadable(
 
 const ChallengeTwo = Loadable(
   lazy(() => import("../pages/human-resource/ChallengeTwoInitial"))
+);
+
+const Others = Loadable(
+  lazy(() => import("../pages/human-resource/ChallengeOther"))
 );
