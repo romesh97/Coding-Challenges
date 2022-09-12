@@ -37,7 +37,8 @@ export default function ChallengeOthers() {
       </Stack>
       <Box>
         <Typography variant="h4">
-          Challenge 3 and 4 Code Base Is On The Server
+          Challenge 3 and 4 Code Base Is On The Server Please Check It From The
+          Server
         </Typography>
       </Box>
     </>
