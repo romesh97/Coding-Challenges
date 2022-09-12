@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Application;
 
 use App\Models\Company;
 use App\Models\Document;
 use Illuminate\Http\Request;
 
-class ApplicationController extends Controller
+class GroupByOwnersService
 {
     public function getDocumentDetails(Request $request)
     {
