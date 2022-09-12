@@ -11,14 +11,13 @@ class GroupByOwnersService
     public function getDocumentDetails(Request $request)
     {
         $companies = Company::all();
-        $sampleArray = [];
-        foreach ($companies as $key => $element) {
-            $document = Document::where('id', '=', $element->document_id)->first();
-            $element['companyName'] = $element->company_name;
-            $element['documentName'] = $document->document_name;
-            array_push($sampleArray, $element);
+        foreach ($companies as $key => $value) {
+            $documents = Document::where('company_id', '=', $value['id'])->pluck('document_name');
+            $data[] = [$value['company_name'] => $documents];
+
         }
-        return $sampleArray;
+        return $data;
 
     }
+
 }
