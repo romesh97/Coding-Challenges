@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class SubGroups extends Model
 {
     use HasFactory;
+
+    public function companyGroups()
+    {
+        return $this->belongsTo('App\Models\Organization\CompanyGroups');
+    }
 }
