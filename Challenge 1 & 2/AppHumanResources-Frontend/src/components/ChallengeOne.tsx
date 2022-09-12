@@ -12,6 +12,7 @@ import DataTable from "./Table";
 
 export default function ChallengeOne() {
   const navigate = useNavigate();
+  const Swal = require("sweetalert2");
   const [document, setDocument] = useState<string>("");
   const [uploadPercentage, setUploadPercentage] = useState<number>(0);
 
@@ -46,6 +47,14 @@ export default function ChallengeOne() {
         setTimeout(() => {
           setUploadPercentage(0);
         }, 1000);
+
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "CSV file uploaded successfully",
+          showConfirmButton: false,
+          timer: 1500,
+        });
       })
       .catch((err) => {
         console.log("an error occurred in catch", err);
