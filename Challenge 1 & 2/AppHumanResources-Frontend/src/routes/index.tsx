@@ -28,6 +28,7 @@ export default function Router() {
               index: true,
             },
             { path: "file-upload", element: <Home /> },
+            { path: "challenge-two", element: <ChallengeTwo /> },
           ],
         },
       ],
@@ -36,4 +37,10 @@ export default function Router() {
 }
 
 // Main
-const Home = Loadable(lazy(() => import("../pages/human-resource/Initial")));
+const Home = Loadable(
+  lazy(() => import("../pages/human-resource/ChallengeOneInitial"))
+);
+
+const ChallengeTwo = Loadable(
+  lazy(() => import("../pages/human-resource/ChallengeTwoInitial"))
+);

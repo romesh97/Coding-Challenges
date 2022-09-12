@@ -1,6 +1,7 @@
 // material
 import { useState } from "react";
-import { Box, Typography, Grid, TextField, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import { Box, Typography, Grid, TextField, Button, Stack } from "@mui/material";
 import axios from "axios";
 import { ProgressBar } from "react-bootstrap";
 
@@ -10,6 +11,7 @@ import DataTable from "./Table";
 // ----------------------------------------------------------------------
 
 export default function ChallengeOne() {
+  const navigate = useNavigate();
   const [document, setDocument] = useState<string>("");
   const [uploadPercentage, setUploadPercentage] = useState<number>(0);
 
@@ -53,8 +55,26 @@ export default function ChallengeOne() {
 
   return (
     <>
-      <Grid container sx={{ px: { md: "20em", sm: "3em", xs: "2em" } }}>
-        <Grid item sm={6} xs={12}>
+      <Stack direction="row" spacing={2} sx={{ my: 5 }}>
+        <Button
+          variant="contained"
+          sx={{ width: "100%" }}
+          color="primary"
+          onClick={() => navigate("/home/file-upload")}
+        >
+          CHALLENGE 1
+        </Button>
+        <Button
+          variant="contained"
+          sx={{ width: "100%" }}
+          color="primary"
+          onClick={() => navigate("/home/challenge-two")}
+        >
+          CHALLENGE 2
+        </Button>
+      </Stack>
+      <Grid container>
+        <Grid item md={6} sm={6} xs={12}>
           <Typography
             variant="h6"
             sx={{
@@ -64,7 +84,7 @@ export default function ChallengeOne() {
             Upload Document:
           </Typography>
         </Grid>
-        <Grid item sm={6} xs={12}>
+        <Grid item md={6} sm={6} xs={12}>
           <TextField
             margin="normal"
             required
@@ -75,27 +95,27 @@ export default function ChallengeOne() {
             sx={{ pt: 1.5 }}
           />
         </Grid>
-        <Button
-          variant="contained"
-          sx={{ mt: 3, width: "100%" }}
-          color="primary"
-          onClick={() => {
-            handleSubmit();
-          }}
-        >
-          Submit
-        </Button>
-        {uploadPercentage > 0 && (
-          <Box>
-            <ProgressBar
-              now={uploadPercentage}
-              striped={true}
-              label={`${uploadPercentage}%`}
-            />
-          </Box>
-        )}
-        <DataTable />
       </Grid>
+      <Button
+        variant="contained"
+        sx={{ mt: 3, width: "100%" }}
+        color="primary"
+        onClick={() => {
+          handleSubmit();
+        }}
+      >
+        Submit
+      </Button>
+      {uploadPercentage > 0 && (
+        <Box>
+          <ProgressBar
+            now={uploadPercentage}
+            striped={true}
+            label={`${uploadPercentage}%`}
+          />
+        </Box>
+      )}
+      <DataTable />
     </>
   );
 }
